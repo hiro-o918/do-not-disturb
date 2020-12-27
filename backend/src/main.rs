@@ -9,7 +9,7 @@ use warp::Filter;
 #[tokio::main]
 async fn main() {
     if env::var_os("RUST_LOG").is_none() {
-        env::set_var("RUST_LOG", "server=debug");
+        env::set_var("RUST_LOG", "debug");
     }
     env_logger::init();
 
