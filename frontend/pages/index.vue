@@ -1,11 +1,11 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">Do Not Distub</h1>
+      <h1 class="title">Do Not Disturb</h1>
       <div class="buttons">
         <div class="button">
           <v-btn elevation="2" large v-on:click="doNotDisturb"
-            >Do Not Distub</v-btn
+            >Do Not Disturb</v-btn
           >
         </div>
         <div class="button">
