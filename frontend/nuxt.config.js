@@ -3,6 +3,9 @@ module.exports = {
     port: 3000,
     host: '0.0.0.0'
   },
+  env: {
+    backendBaseURL: process.env.BACKEND_BASE_URL || 'http://localhost:8000/'
+  },
   /*
   ** Headers of the page
   */
@@ -46,6 +49,7 @@ module.exports = {
   modules: [
     '@nuxtjs/axios'
   ],
+  plugins: ['~/plugins/backend'],
   axios: {}
 }
 

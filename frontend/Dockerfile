@@ -14,6 +14,9 @@ WORKDIR /usr/local/app/
 
 COPY . .
 
+ARG BACKEND_BASE_URL=http://localhost:8000
+ENV BACKEND_BASE_URL ${BACKEND_BASE_URL}
+
 RUN yarn install \
   && yarn build
 

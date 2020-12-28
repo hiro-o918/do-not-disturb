@@ -17,19 +17,17 @@
 </template>
 
 <script lang="ts">
-import axios from "axios";
-
-export default {
-  // TODO: set hostname by an enviroment variable
+import Vue from "vue";
+export default Vue.extend({
   methods: {
-    doNotDisturb: () => {
-      axios.post("http://localhost:8000/do-not-disturb");
+    doNotDisturb() {
+      this.$backendClient.post(`/do-not-disturb`);
     },
-    release: () => {
-      axios.post("http://localhost:8000/release");
+    release() {
+      this.$backendClient.post(`/release`);
     },
   },
-};
+});
 </script>
 
 <style>
