@@ -16,10 +16,11 @@ async fn main() {
     let config = envy::prefixed("SLACK_").from_env::<SlackConfig>().unwrap();
 
     let api = filters::root(&config);
-
-    let routes = api.with(warp::log("server"));
+    let cors = warp::cors().allow_any_origin().build();
+    let routes = api.with(warp::log("server")).with(cors);
     // Start up the server...
     info!("Start up the server");
+
     warp::serve(routes).run(([0, 0, 0, 0], 8000)).await;
 }
 
